@@ -368,7 +368,7 @@
 
             const pagesHTML = U18_DATA.map(block => {
                 return block.sessions.map(session => `
-                    <div class="print-container page-break relative w-full max-w-[1100px] mx-auto bg-white p-4 md:p-8 mb-8 shadow-xl border-t-[10px] border-black print-border-heavy box-border flex flex-col justify-between print-bg-white" style="height: auto; min-height: 19cm">
+                    <div class="print-container page-break relative w-full max-w-[800px] mx-auto bg-white p-4 md:p-6 mb-8 shadow-xl border-t-[10px] border-black print-border-heavy box-border flex flex-col justify-between print-bg-white" style="height: auto; min-height: 27cm">
                         <div>
                             ${getHeaderHTML()}
                             ${getTrackerHTML(block)}
