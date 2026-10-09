@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U18 Girls Academy S&C | Printouts</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f3f4f6; 
+        }
+        .font-brand { font-family: 'Oswald', sans-serif; }
+        
+        /* High Contrast Print Styles */
+        @media print {
+            @page { size: landscape; margin: 0.4cm; }
+            body { 
+                background-color: white !important; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+                color: black !important;
+            }
+            .page-break { break-after: page; page-break-after: always; }
+            .no-print { display: none !important; }
+            .print-container { border-top: 10px solid black !important; }
+            
+            .print-bg-white { background-color: white !important; }
+            .print-bg-gray-50 { background-color: #f9fafb !important; }
+            .print-bg-gray-100 { background-color: #f3f4f6 !important; }
+            .print-bg-gray-200 { background-color: #e5e7eb !important; }
+            .print-bg-black { background-color: black !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            
+            .print-border-black { border-color: black !important; }
+            .print-text-black { color: black !important; }
+            .print-text-white { color: white !important; }
+            .print-text-red { color: #D00000 !important; }
+        }
+
+        .print-box { 
+            width: 14px; 
+            height: 14px; 
+            border: 1.5px solid #4B5563; 
+            display: inline-block; 
+            background: white; 
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        // --- U18 MOVEMENT PREP WARM-UP ---
+        const U18_WARMUP = [
+            { name: "1. Bear Crawls", reps: "20m", focus: "Full body control & shoulder stability. Keep hips low." },
+            { name: "2. Prying Squat", reps: "10 reps", focus: "Squat literacy. 3s pause at bottom, push knees out." },
+            { name: "3. Single Leg Balance", reps: "20s/leg", focus: "Ankle and hip stability. Grip the floor with the big toe." },
+            { name: "4. T-Spine Rotations", reps: "8/side", focus: "Upper back mobility for tackling and passing." },
+            { name: "5. Neck Isometrics", reps: "15s/way", focus: "Crucial concussion armor. Front, back, and sides." },
+            { name: "6. Pogo Jumps", reps: "20 reps", focus: "Basic tendon elasticity. Bounce from the ankles." }
+        ];
+
+        // --- THE U18 GIRLS ACADEMY DATABASE (Placeholder until CSV is provided) ---
+        const U18_DATA = [
+            // ==========================================
+            // BLOCK 1: WEEKS 1-4 (FOUNDATIONS)
+            // ==========================================
+            {
+                months: ['SEP', 'OCT'],
+                block: "PHASE 1: MOVEMENT LITERACY", 
+                intent: "Mastering the Squat, Hinge, Push, and Pull. Learning to land safely and brace the core.",
+                sessions: [
+                    {
+                        day: "SESSION A: SQUAT & PUSH", title: "LOWER BODY PUSH & LANDING",
+                        subtitle: "Focus on perfect squat mechanics and absorbing force quietly.",
+                        exercises: [
+                            { name: "A. Box Jumps (Step Down)", sets: "3", reps: "5", rpe: "6", rest: "60s", notes: "Power & Landing: Jump up, land softly. STEP down, do not jump down." },
+                            { name: "B1. Goblet Squat", sets: "3", reps: "8", rpe: "7", rest: "None", notes: "Squat: Hold DB at chest. 3 seconds down, push knees out, drive up." },
+                            { name: "B2. Push-Up Progressions", sets: "3", reps: "5-8", rpe: "8", rest: "90s", notes: "Press: Use a box or bench to elevate hands if needed. Core tight." },
+                            { name: "C1. Bear Crawl (Weighted)", sets: "3", reps: "15m", rpe: "7", rest: "None", notes: "Core: Drag a light sandbag or just bodyweight. Control the hips." },
+                            { name: "C2. Heavy Farmer's Carry", sets: "3", reps: "20m", rpe: "8", rest: "90s", notes: "Armor: Grab heavy dumbbells. Walk tall, shoulders back." }
+                        ]
+                    },
+                    {
+                        day: "SESSION B: HINGE & PULL", title: "POSTERIOR CHAIN & POSTURE",
+                        subtitle: "Developing the hamstrings, glutes, and upper back for tackling posture.",
+                        exercises: [
+                            { name: "A. Broad Jumps (Stick Landing)", sets: "4", reps: "3", rpe: "MAX", rest: "60s", notes: "Power: Jump far, but freeze your landing for 2 seconds. No wobbly knees." },
+                            { name: "B1. DB Romanian Deadlift (RDL)", sets: "3", reps: "8", rpe: "7", rest: "None", notes: "Hinge: Soft knees, push hips to the wall behind you. Feel the hamstrings." },
+                            { name: "B2. Inverted Ring/Bar Rows", sets: "3", reps: "8", rpe: "8", rest: "90s", notes: "Pull: Squeeze shoulder blades together. Keep body stiff like a board." },
+                            { name: "C1. Medball Rotational Toss", sets: "3", reps: "6/side", rpe: "MAX", rest: "None", notes: "Twist: Throw the ball against the wall aggressively from the hip." },
+                            { name: "C2. Deadbugs", sets: "3", reps: "10/side", rpe: "7", rest: "90s", notes: "Core: Lower back pressed hard into the floor. Breathe out as leg extends." }
+                        ]
+                    },
+                    {
+                        day: "SESSION C: UNILATERAL", title: "SINGLE LEG & STABILITY",
+                        subtitle: "Fixing left/right imbalances and building ankle/knee stability.",
+                        exercises: [
+                            { name: "A. Lateral Skater Jumps", sets: "3", reps: "5/side", rpe: "7", rest: "60s", notes: "Power: Jump side-to-side. Stick the landing on one foot perfectly." },
+                            { name: "B1. Split Squat", sets: "3", reps: "8/leg", rpe: "7", rest: "None", notes: "Lunge: Drop back knee straight down to a pad. Front foot flat." },
+                            { name: "B2. DB Seated Overhead Press", sets: "3", reps: "8", rpe: "7", rest: "90s", notes: "Press: Sit tall, press weights overhead. Do not lean back." },
+                            { name: "C1. Single Leg Glute Bridge", sets: "3", reps: "10/leg", rpe: "8", rest: "None", notes: "Armor: Drive through the heel. Squeeze glute at the top." },
+                            { name: "C2. Front Plank", sets: "3", reps: "30-45s", rpe: "8", rest: "90s", notes: "Core: Squeeze glutes, squeeze quads, pull elbows toward toes." }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        function getHeaderHTML() {
+            return `
+                <div class="border-b-[5px] border-black print-border-black pb-2 mb-3 mt-1">
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <h1 class="font-brand text-4xl font-bold uppercase tracking-tighter text-black print-text-black leading-none">Newman<span class="text-[#D00000] print-text-red">Academy</span></h1>
+                            <h2 class="font-brand text-lg text-gray-600 print-text-black tracking-widest uppercase mt-1">U18 Girls S&C Protocol // Winter Upgrades</h2>
+                        </div>
+                        <div class="text-right">
+                            <div class="bg-white print-bg-white text-black print-text-black border-2 border-black print-border-black px-3 py-1 text-xs font-bold tracking-widest uppercase inline-block mb-1">
+                                The Four Pillars
+                            </div>
+                            <p class="text-[10px] font-bold text-black print-text-black uppercase">1. Sleep // 2. Strength // 3. Nutrition // 4. Stress Mgt.</p>
+                            <p class="text-[9px] text-gray-500 print-text-black italic">"Without these, performance is irrelevant."</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getTrackerHTML(data) {
+            const monthsList = ['SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG'];
+            const daysList = ['M', 'T', 'W', 'TH', 'F', 'S', 'SU'];
+
+            const monthsHTML = monthsList.map(m => {
+                const isCurrent = data.months.includes(m);
+                return `
+                    <label class="flex items-center gap-1 text-[8px] font-bold text-black print-text-black">
+                        <span class="w-3 h-3 border border-black print-border-black inline-flex items-center justify-center font-bold text-[9px] ${isCurrent ? 'bg-gray-200 print-bg-gray-200' : 'bg-white print-bg-white'}">
+                            ${isCurrent ? '&#10003;' : ''}
+                        </span> ${m}
+                    </label>
+                `;
+            }).join('');
+
+            const daysHTML = daysList.map(d => `
+                <label class="flex items-center gap-1 text-[10px] font-black text-black print-text-black">
+                    <span class="w-3 h-3 border border-gray-400 print-border-black inline-block bg-white print-bg-white"></span> ${d}
+                </label>
+            `).join('');
+
+            return `
+            <div class="grid grid-cols-12 gap-3 mb-2">
+                <div class="col-span-3 bg-white print-bg-white border-[3px] border-black print-border-black p-3 rounded-lg shadow-sm relative overflow-hidden flex flex-col justify-center">
+                    <div class="text-[11px] font-black text-black print-text-black uppercase tracking-widest mb-2 border-b-2 border-black print-border-black pb-1">01. Status (Tick)</div>
+                    <div class="flex flex-col gap-2 mt-0.5">
+                        <label class="flex items-center gap-2 text-[10px] font-black text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> GREEN (100% Ready)
+                        </label>
+                        <label class="flex items-center gap-2 text-[10px] font-black text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> AMBER (Sore/Tired)
+                        </label>
+                        <label class="flex items-center gap-2 text-[10px] font-black text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> RED (Injured)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-span-4 bg-gray-50 print-bg-gray-50 border-2 border-black print-border-black p-2 rounded-lg flex flex-col justify-center">
+                    <div class="text-[10px] font-bold text-black print-text-black uppercase tracking-widest mb-1 border-b border-black print-border-black pb-1">02. Macrocycle & Day</div>
+                    <div class="flex flex-wrap gap-1 mt-1.5">
+                        ${monthsHTML}
+                    </div>
+                    <div class="flex gap-4 mt-2 pt-1 border-t border-black print-border-black">
+                        ${daysHTML}
+                    </div>
+                </div>
+
+                <div class="col-span-5 bg-white print-bg-white border-[3px] border-black print-border-black p-3 rounded-lg text-black print-text-black flex flex-col justify-center shadow-md">
+                    <div class="text-[10px] font-bold text-black print-text-black uppercase tracking-widest mb-1 border-b border-black print-border-black pb-1">03. Phase & Intent</div>
+                    <div class="mt-1">
+                        <div class="text-[15px] font-black tracking-widest uppercase leading-none mb-1.5 text-[#D00000] print-text-red">${data.block}</div>
+                        <div class="text-[10px] font-medium leading-snug text-black print-text-black">${data.intent}</div>
+                    </div>
+                </div>
+                
+                <div class="col-span-12 bg-blue-50 print-bg-white border-2 border-blue-800 print-border-black p-2 rounded-lg flex items-center gap-2">
+                    <span class="bg-blue-800 print-bg-black print-text-white print-border-black border text-white px-2 py-0.5 rounded text-[10px] font-black tracking-widest uppercase">Literacy Standard</span>
+                    <span class="text-[10px] font-bold text-black print-text-black">QUALITY OVER QUANTITY. If your form breaks down or you cannot control the landing, lower the weight or regress the exercise immediately. Earn the right to lift heavy.</span>
+                </div>
+            </div>
+            `;
+        }
+
+        function getWarmupHTML() {
+            const boxes = U18_WARMUP.map(ex => `
+                <div class="bg-white print-bg-white p-2 border-[0.5px] border-gray-400 print-border-black flex flex-col justify-between h-full">
+                    <div class="flex items-start justify-between gap-1 mb-1">
+                        <span class="text-[11px] font-bold text-black print-text-black leading-tight">${ex.name}</span>
+                        <span class="w-3 h-3 border border-gray-400 print-border-black flex-shrink-0 mt-0.5"></span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-black text-[#D00000] print-text-black block mb-0.5 leading-none">${ex.reps}</span>
+                        <span class="text-[8px] text-gray-800 print-text-black leading-tight block">${ex.focus}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            return `
+            <div class="mb-4 border-2 border-black print-border-black rounded-lg overflow-hidden mt-2">
+                <div class="bg-white print-bg-white text-black print-text-black border-b-2 border-black print-border-black p-2 px-3 flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <h3 class="font-brand text-sm font-bold tracking-widest uppercase">PRE-FLIGHT CHECKLIST</h3>
+                        <span class="bg-black print-bg-black print-text-white print-border-black border text-white text-[9px] px-2 py-0.5 rounded-sm font-bold tracking-wide uppercase">1. Belly Breathing (10 Breaths) First</span>
+                    </div>
+                    <span class="text-xs font-bold text-black print-text-black">U18 MOVEMENT PREP</span>
+                </div>
+                <div class="grid grid-cols-3 gap-0 bg-gray-200 print-bg-white">
+                    ${boxes}
+                </div>
+            </div>
+            `;
+        }
+
+        function getTableHTML(exercises) {
+            // High-Speed Action-Block Layout to cure Spreadsheet Paralysis
+            const rows = exercises.map((ex) => {
+                let prefix = "";
+                let name = ex.name;
+                
+                // Extract prefix (A1, B, C2) from the exercise name automatically
+                const match = ex.name.match(/^([A-Z]\d?\.?\s*)(.*)/);
+                if (match) {
+                    prefix = match[1].replace('.', '').trim(); // E.g., turns "A1." into "A1"
+                    name = match[2].trim();
+                }
+
+                return `
+                <div class="flex items-stretch border-b-[3px] border-black print-border-black bg-white print-bg-white">
+                    <!-- Letter Block -->
+                    <div class="w-14 flex-shrink-0 bg-gray-200 print-bg-gray-200 border-r-[3px] border-black print-border-black flex items-center justify-center font-brand text-2xl font-black text-black print-text-black">
+                        ${prefix}
+                    </div>
+                    
+                    <!-- Exercise Details -->
+                    <div class="flex-1 p-3 flex flex-col justify-center border-r-[3px] border-black print-border-black">
+                        <div class="font-black text-black print-text-black text-[16px] leading-tight mb-1 uppercase tracking-tight">${name}</div>
+                        <div class="text-[10px] text-gray-600 print-text-black font-bold leading-snug pr-2">${ex.notes}</div>
+                    </div>
+                    
+                    <!-- Target Sets/Reps -->
+                    <div class="w-24 flex-shrink-0 flex flex-col items-center justify-center border-r-[3px] border-black print-border-black bg-gray-50 print-bg-gray-50 p-2">
+                        <div class="text-[9px] font-black text-gray-500 print-text-black uppercase tracking-widest mb-0.5">Target</div>
+                        <div class="text-xl font-black text-[#D00000] print-text-red leading-none whitespace-nowrap">${ex.sets} × ${ex.reps}</div>
+                    </div>
+                    
+                    <!-- Action Tracking Boxes -->
+                    <div class="w-32 flex-shrink-0 p-2 flex flex-col items-center justify-center bg-white print-bg-white">
+                        <div class="text-[8px] font-black text-gray-400 print-text-black uppercase tracking-widest mb-1.5">Track Loads</div>
+                        <div class="flex gap-2 w-full justify-center">
+                            <div class="w-6 h-6 border-[2px] border-gray-400 print-border-black rounded-sm"></div>
+                            <div class="w-6 h-6 border-[2px] border-gray-400 print-border-black rounded-sm"></div>
+                            <div class="w-6 h-6 border-[2px] border-gray-400 print-border-black rounded-sm"></div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            return `
+            <div class="overflow-hidden rounded-xl border-[3px] border-black print-border-black shadow-sm mt-3">
+                <div class="bg-black text-white print-bg-black print-text-white p-2 flex justify-between items-center px-4 border-b-[3px] border-black print-border-black">
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Exercise Block</span>
+                    <span class="text-[10px] font-bold tracking-widest uppercase">Execution & Tracking</span>
+                </div>
+                <div class="flex flex-col">
+                    ${rows}
+                </div>
+            </div>
+            `;
+        }
+
+        function getFooterHTML() {
+            return `
+            <div class="mt-4 flex gap-4 h-24 shrink-0">
+                <div class="flex-1 border-2 border-black print-border-black rounded-lg bg-gray-50 print-bg-gray-50 p-2 relative shadow-sm">
+                    <span class="text-[10px] font-black text-black print-text-black uppercase tracking-widest">Coaching Notes & Adjustments</span>
+                    <div class="h-full flex items-end pb-1">
+                        <span class="text-[9px] text-gray-500 print-text-black italic w-full text-center">(Record loads, box heights, or form corrections here)</span>
+                    </div>
+                </div>
+
+                <div class="w-56 border-[3px] border-black print-border-black rounded-lg flex flex-col bg-white print-bg-white p-2 shadow-sm">
+                    <span class="text-[10px] font-black text-black print-text-black uppercase tracking-widest border-b-2 border-gray-200 print-border-black mb-1.5 pb-1 text-center">Off-Field Extras</span>
+                    <p class="text-[8px] text-gray-600 print-text-black text-center leading-none mb-1.5 italic">Build your engine outside the gym.</p>
+                    <div class="flex flex-col gap-1.5 pl-2 mt-1">
+                        <label class="flex items-center gap-2 text-[10px] font-bold text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> 15-Min Easy Jog
+                        </label>
+                        <label class="flex items-center gap-2 text-[10px] font-bold text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> 5x 20m Sprints (Full Rest)
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="w-56 border-[3px] border-black print-border-black rounded-lg flex flex-col bg-white print-bg-white p-2 shadow-sm">
+                    <span class="text-[10px] font-black text-black print-text-black uppercase tracking-widest border-b-2 border-gray-200 print-border-black mb-2 pb-1 text-center">Wellness Check (Tick One)</span>
+                    <div class="flex flex-col gap-1.5 mt-0.5 pl-2">
+                        <label class="flex items-center gap-2 text-[10px] font-bold text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> Feeling Good
+                        </label>
+                        <label class="flex items-center gap-2 text-[10px] font-bold text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> Okay, but sore
+                        </label>
+                        <label class="flex items-center gap-2 text-[10px] font-bold text-black print-text-black leading-none">
+                            <span class="w-3.5 h-3.5 border-2 border-black print-border-black inline-block"></span> Broken (See Coach)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+
+        function renderPrintouts() {
+            const container = document.getElementById('root');
+            
+            const introHTML = `
+                <div class="no-print bg-gray-900 text-white p-6 text-center mb-8 border-b-4 border-[#D00000]">
+                    <h2 class="text-2xl font-brand uppercase tracking-widest mb-1">Newman Academy U18 Girls S&C Database</h2>
+                    <p class="text-sm text-gray-400 mb-4">Winter Upgrades (Awaiting CSV Data) | High-Speed Layout | Press CMD+P to print.</p>
+                    <button onclick="window.print()" class="bg-[#D00000] hover:bg-red-700 text-white font-bold py-2 px-6 rounded transition tracking-widest uppercase text-sm">
+                        Print U18 Protocol Book
+                    </button>
+                </div>
+            `;
+
+            const pagesHTML = U18_DATA.map(block => {
+                return block.sessions.map(session => `
+                    <div class="print-container page-break relative w-full max-w-[1100px] mx-auto bg-white p-4 md:p-8 mb-8 shadow-xl border-t-[10px] border-black print-border-black box-border flex flex-col justify-between print-bg-white" style="height: auto; min-height: 19cm">
+                        <div>
+                            ${getHeaderHTML()}
+                            ${getTrackerHTML(block)}
+                            ${getWarmupHTML()}
+                            
+                            <div class="flex items-center gap-3 mb-2 border-b-2 border-[#D00000] print-border-black pb-1 mt-4">
+                                <h2 class="font-brand text-2xl text-black print-text-black uppercase leading-none">${session.day} <span class="text-gray-300 print-text-black mx-1">|</span> <span class="text-[#D00000] print-text-red">${session.title}</span></h2>
+                            </div>
+                            <p class="text-gray-700 print-text-black font-bold text-[11px] mb-3 italic">${session.subtitle}</p>
+
+                            ${getTableHTML(session.exercises)}
+                        </div>
+                        ${getFooterHTML()}
+                    </div>
+                `).join('');
+            }).join('');
+
+            container.innerHTML = `
+                <div class="pb-10 bg-gray-100 print-bg-white">
+                    ${introHTML}
+                    ${pagesHTML}
+                </div>
+            `;
+        }
+
+        window.onload = renderPrintouts;
+    </script>
+</body>
+</html>
