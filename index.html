@@ -34,7 +34,8 @@
             .print-bg-gray-200 { background-color: #e5e7eb !important; }
             .print-bg-black { background-color: black !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             
-            .print-border-black { border-color: black !important; }
+            .print-border-black { border-color: black !important; border-width: 2px !important; }
+            .print-border-heavy { border-color: black !important; border-width: 3px !important; }
             .print-text-black { color: black !important; }
             .print-text-white { color: white !important; }
             .print-text-red { color: #D00000 !important; }
@@ -53,7 +54,7 @@
     <div id="root"></div>
 
     <script>
-        // --- U18 MOVEMENT PREP WARM-UP ---
+        //        // --- U18 MOVEMENT PREP WARM-UP ---
         const U18_WARMUP = [
             { name: "1. Bear Crawls", reps: "20m", focus: "Full body control & shoulder stability. Keep hips low." },
             { name: "2. Prying Squat", reps: "10 reps", focus: "Squat literacy. 3s pause at bottom, push knees out." },
@@ -63,48 +64,63 @@
             { name: "6. Pogo Jumps", reps: "20 reps", focus: "Basic tendon elasticity. Bounce from the ankles." }
         ];
 
-        // --- THE U18 GIRLS ACADEMY DATABASE (Placeholder until CSV is provided) ---
+        // --- THE U18 GIRLS ACADEMY DATABASE (Wintering 2026/27) ---
         const U18_DATA = [
-            // ==========================================
-            // BLOCK 1: WEEKS 1-4 (FOUNDATIONS)
-            // ==========================================
             {
-                months: ['SEP', 'OCT'],
-                block: "PHASE 1: MOVEMENT LITERACY", 
-                intent: "Mastering the Squat, Hinge, Push, and Pull. Learning to land safely and brace the core.",
+                months: ['NOV', 'DEC', 'JAN'],
+                block: "WINTERING 2026/27: ABSOLUTE FORCE & ENGINE", 
+                intent: "Autoregulated concentric density, PAP contrast, and Alactic Q&D Engine building.",
                 sessions: [
                     {
-                        day: "SESSION A: SQUAT & PUSH", title: "LOWER BODY PUSH & LANDING",
-                        subtitle: "Focus on perfect squat mechanics and absorbing force quietly.",
+                        day: "SESSION A", title: "THE ABSOLUTE FORCE ANCHOR",
+                        subtitle: "Focus on heavy tension, PAP contrast, and alactic engine.",
                         exercises: [
-                            { name: "A. Box Jumps (Step Down)", sets: "3", reps: "5", rpe: "6", rest: "60s", notes: "Power & Landing: Jump up, land softly. STEP down, do not jump down." },
-                            { name: "B1. Goblet Squat", sets: "3", reps: "8", rpe: "7", rest: "None", notes: "Squat: Hold DB at chest. 3 seconds down, push knees out, drive up." },
-                            { name: "B2. Push-Up Progressions", sets: "3", reps: "5-8", rpe: "8", rest: "90s", notes: "Press: Use a box or bench to elevate hands if needed. Core tight." },
-                            { name: "C1. Bear Crawl (Weighted)", sets: "3", reps: "15m", rpe: "7", rest: "None", notes: "Core: Drag a light sandbag or just bodyweight. Control the hips." },
-                            { name: "C2. Heavy Farmer's Carry", sets: "3", reps: "20m", rpe: "8", rest: "90s", notes: "Armor: Grab heavy dumbbells. Walk tall, shoulders back." }
-                        ]
+                            { name: "1. RPR + 10m Waterbag Skip", sets: "-", reps: "2 Mins", rpe: "-", rest: "-", notes: "Primer: Turn on the lateral/spiral slings." },
+                            { name: "2. Heavy TGU (10-Min Cap)", sets: "-", reps: "10 Mins", rpe: "8", rest: "-", notes: "Structural Iso: Hold 3s at every checkpoint. Enhance shoulder stability under time-capped tension." },
+                            { name: "3A. Oscillatory Goblet Squat", sets: "3", reps: "15 Pulses", rpe: "9", rest: "None", notes: "PAP Contrast: Pulse for 6s (Alactic), immediately drop into the jump." },
+                            { name: "3B. Drop Jump (20\")", sets: "3", reps: "3 Drops", rpe: "MAX", rest: "90s", notes: "PAP Contrast: Immediately drop and stick the landing." },
+                            { name: "4. Heavy KB Press (The Giant)", sets: "Med", reps: "20-30m", rpe: "10RM", rest: "Auto", notes: "Concentric: Autoregulated clean & press sets. Establish baseline pressing density." },
+                            { name: "6. 1:4:2 Nasal Box Breathing", sets: "-", reps: "3-5 Mins", rpe: "-", rest: "-", notes: "Recovery: Mandatory sympathetic down-regulation." }
+                        ],
+                        engine: {
+                            title: "5. ENGINE: Quick & Dead (Q&D) Snatch",
+                            protocol: "10s ON / 50s OFF",
+                            focus: "Total 40-80 reps. Roll dice for volume. Zero lactic burn."
+                        }
                     },
                     {
-                        day: "SESSION B: HINGE & PULL", title: "POSTERIOR CHAIN & POSTURE",
-                        subtitle: "Developing the hamstrings, glutes, and upper back for tackling posture.",
+                        day: "SESSION B", title: "THE KINETIC SPRING",
+                        subtitle: "Desensitizing the GTO and building sprawling/guard passing tendon density.",
                         exercises: [
-                            { name: "A. Broad Jumps (Stick Landing)", sets: "4", reps: "3", rpe: "MAX", rest: "60s", notes: "Power: Jump far, but freeze your landing for 2 seconds. No wobbly knees." },
-                            { name: "B1. DB Romanian Deadlift (RDL)", sets: "3", reps: "8", rpe: "7", rest: "None", notes: "Hinge: Soft knees, push hips to the wall behind you. Feel the hamstrings." },
-                            { name: "B2. Inverted Ring/Bar Rows", sets: "3", reps: "8", rpe: "8", rest: "90s", notes: "Pull: Squeeze shoulder blades together. Keep body stiff like a board." },
-                            { name: "C1. Medball Rotational Toss", sets: "3", reps: "6/side", rpe: "MAX", rest: "None", notes: "Twist: Throw the ball against the wall aggressively from the hip." },
-                            { name: "C2. Deadbugs", sets: "3", reps: "10/side", rpe: "7", rest: "90s", notes: "Core: Lower back pressed hard into the floor. Breathe out as leg extends." }
-                        ]
+                            { name: "1. RPR + 10m Waterbag Skip", sets: "-", reps: "2 Mins", rpe: "-", rest: "-", notes: "Primer: Neural wake-up." },
+                            { name: "2. Extreme Yielding Lunge", sets: "1-2", reps: "60-90s", rpe: "9", rest: "90s", notes: "Structural Iso: Builds tendon density for sprawling/guard passing." },
+                            { name: "3A. Oscillatory Push-Up/Dip", sets: "3", reps: "15 Pulses", rpe: "9", rest: "None", notes: "PAP Contrast: Desensitizes the GTO. Instantly recruits Type IIx fibers." },
+                            { name: "3B. Drop Catch on GHR", sets: "3", reps: "5 Catches", rpe: "MAX", rest: "90s", notes: "PAP Contrast: Plate or Sandbag. Snap and catch." },
+                            { name: "4. Heavy Zercher Squat", sets: "Light", reps: "20-30m", rpe: "10RM", rest: "Auto", notes: "Concentric: Facilitate active recovery and technique maintenance." },
+                            { name: "6. Dr. Baar Joint Flushes", sets: "-", reps: "5 Mins", rpe: "-", rest: "-", notes: "Recovery: + 1:4:2 Breathing. Wring out the edema like a sponge." }
+                        ],
+                        engine: {
+                            title: "5. ENGINE: EMOM Density Circuit",
+                            protocol: "10-15 Mins EMOM: 2x Kneeling Plate Press, 1x Pull-up, 3x Plate Hack Squat",
+                            focus: "Every Minute On the Minute. Sustained technical execution under fatigue."
+                        }
                     },
                     {
-                        day: "SESSION C: UNILATERAL", title: "SINGLE LEG & STABILITY",
-                        subtitle: "Fixing left/right imbalances and building ankle/knee stability.",
+                        day: "SESSION C", title: "LATERAL/ROTATIONAL ANCHOR",
+                        subtitle: "Priming the rotational sling and peak end-of-microcycle volume.",
                         exercises: [
-                            { name: "A. Lateral Skater Jumps", sets: "3", reps: "5/side", rpe: "7", rest: "60s", notes: "Power: Jump side-to-side. Stick the landing on one foot perfectly." },
-                            { name: "B1. Split Squat", sets: "3", reps: "8/leg", rpe: "7", rest: "None", notes: "Lunge: Drop back knee straight down to a pad. Front foot flat." },
-                            { name: "B2. DB Seated Overhead Press", sets: "3", reps: "8", rpe: "7", rest: "90s", notes: "Press: Sit tall, press weights overhead. Do not lean back." },
-                            { name: "C1. Single Leg Glute Bridge", sets: "3", reps: "10/leg", rpe: "8", rest: "None", notes: "Armor: Drive through the heel. Squeeze glute at the top." },
-                            { name: "C2. Front Plank", sets: "3", reps: "30-45s", rpe: "8", rest: "90s", notes: "Core: Squeeze glutes, squeeze quads, pull elbows toward toes." }
-                        ]
+                            { name: "1. RPR + Landmine Rotations", sets: "-", reps: "2 Mins", rpe: "-", rest: "-", notes: "Primer: Light. Prime the rotational sling." },
+                            { name: "2. Landmine Anti-Rotation", sets: "1-2", reps: "60s/side", rpe: "8", rest: "60s", notes: "Structural Iso: Builds core rigidity against rotational forces." },
+                            { name: "3A. Heavy Landmine Rotation", sets: "3", reps: "5/side", rpe: "9", rest: "None", notes: "PAP Contrast: Post-activation potentiation for rotational power." },
+                            { name: "3B. Med Ball Rotational Throw", sets: "3", reps: "3/side", rpe: "MAX", rest: "90s", notes: "PAP Contrast: Aggressive transfer of force." },
+                            { name: "4. Heavy Trap Bar Deadlift", sets: "Heavy", reps: "20-30m", rpe: "10RM", rest: "Auto", notes: "Concentric: Autoregulated sets. Peak pulling volume at the end of the microcycle." },
+                            { name: "6. 1:4:2 Nasal Box Breathing", sets: "-", reps: "3-5 Mins", rpe: "-", rest: "-", notes: "Recovery: Mandatory sympathetic down-regulation." }
+                        ],
+                        engine: {
+                            title: "5. ENGINE: Landmine Thrusters (Q&D)",
+                            protocol: "10s ON / 50s OFF",
+                            focus: "Total 40-80 reps. Roll dice for volume. Zero lactic burn."
+                        }
                     }
                 ]
             }
@@ -116,7 +132,7 @@
                     <div class="flex justify-between items-end">
                         <div>
                             <h1 class="font-brand text-4xl font-bold uppercase tracking-tighter text-black print-text-black leading-none">Newman<span class="text-[#D00000] print-text-red">Academy</span></h1>
-                            <h2 class="font-brand text-lg text-gray-600 print-text-black tracking-widest uppercase mt-1">U18 Girls S&C Protocol // Winter Upgrades</h2>
+                            <h2 class="font-brand text-lg text-gray-600 print-text-black tracking-widest uppercase mt-1">U18 Girls S&C Protocol // Wintering Program</h2>
                         </div>
                         <div class="text-right">
                             <div class="bg-white print-bg-white text-black print-text-black border-2 border-black print-border-black px-3 py-1 text-xs font-bold tracking-widest uppercase inline-block mb-1">
@@ -153,7 +169,7 @@
 
             return `
             <div class="grid grid-cols-12 gap-3 mb-2">
-                <div class="col-span-3 bg-white print-bg-white border-[3px] border-black print-border-black p-3 rounded-lg shadow-sm relative overflow-hidden flex flex-col justify-center">
+                <div class="col-span-3 bg-white print-bg-white border-[3px] border-black print-border-heavy p-3 rounded-lg shadow-sm relative overflow-hidden flex flex-col justify-center">
                     <div class="text-[11px] font-black text-black print-text-black uppercase tracking-widest mb-2 border-b-2 border-black print-border-black pb-1">01. Status (Tick)</div>
                     <div class="flex flex-col gap-2 mt-0.5">
                         <label class="flex items-center gap-2 text-[10px] font-black text-black print-text-black leading-none">
@@ -168,7 +184,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-4 bg-gray-50 print-bg-gray-50 border-2 border-black print-border-black p-2 rounded-lg flex flex-col justify-center">
+                <div class="col-span-4 bg-gray-50 print-bg-gray-50 border-2 border-black print-border-heavy p-2 rounded-lg flex flex-col justify-center">
                     <div class="text-[10px] font-bold text-black print-text-black uppercase tracking-widest mb-1 border-b border-black print-border-black pb-1">02. Macrocycle & Day</div>
                     <div class="flex flex-wrap gap-1 mt-1.5">
                         ${monthsHTML}
@@ -178,7 +194,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-5 bg-white print-bg-white border-[3px] border-black print-border-black p-3 rounded-lg text-black print-text-black flex flex-col justify-center shadow-md">
+                <div class="col-span-5 bg-white print-bg-white border-[3px] border-black print-border-heavy p-3 rounded-lg text-black print-text-black flex flex-col justify-center shadow-md">
                     <div class="text-[10px] font-bold text-black print-text-black uppercase tracking-widest mb-1 border-b border-black print-border-black pb-1">03. Phase & Intent</div>
                     <div class="mt-1">
                         <div class="text-[15px] font-black tracking-widest uppercase leading-none mb-1.5 text-[#D00000] print-text-red">${data.block}</div>
@@ -194,7 +210,7 @@
             `;
         }
 
-        function getWarmupHTML() {
+        //        function getWarmupHTML() {
             const boxes = U18_WARMUP.map(ex => `
                 <div class="bg-white print-bg-white p-2 border-[0.5px] border-gray-400 print-border-black flex flex-col justify-between h-full">
                     <div class="flex items-start justify-between gap-1 mb-1">
@@ -224,22 +240,22 @@
             `;
         }
 
-        function getTableHTML(exercises) {
-            // High-Speed Action-Block Layout to cure Spreadsheet Paralysis
-            const rows = exercises.map((ex) => {
+        function getTableHTML(session) {
+            // High-Speed Action-Block Layout
+            const rows = session.exercises.map((ex) => {
                 let prefix = "";
                 let name = ex.name;
                 
-                // Extract prefix (A1, B, C2) from the exercise name automatically
-                const match = ex.name.match(/^([A-Z]\d?\.?\s*)(.*)/);
+                // Updated Regex to perfectly capture numbers (1., 3A., 4.) from the image format
+                const match = ex.name.match(/^([0-9]+[A-Z]?\.?\s*)(.*)/i);
                 if (match) {
-                    prefix = match[1].replace('.', '').trim(); // E.g., turns "A1." into "A1"
+                    prefix = match[1].replace('.', '').trim();
                     name = match[2].trim();
                 }
 
                 return `
                 <div class="flex items-stretch border-b-[3px] border-black print-border-black bg-white print-bg-white">
-                    <!-- Letter Block -->
+                    <!-- Letter/Number Block -->
                     <div class="w-14 flex-shrink-0 bg-gray-200 print-bg-gray-200 border-r-[3px] border-black print-border-black flex items-center justify-center font-brand text-2xl font-black text-black print-text-black">
                         ${prefix}
                     </div>
@@ -253,7 +269,7 @@
                     <!-- Target Sets/Reps -->
                     <div class="w-24 flex-shrink-0 flex flex-col items-center justify-center border-r-[3px] border-black print-border-black bg-gray-50 print-bg-gray-50 p-2">
                         <div class="text-[9px] font-black text-gray-500 print-text-black uppercase tracking-widest mb-0.5">Target</div>
-                        <div class="text-xl font-black text-[#D00000] print-text-red leading-none whitespace-nowrap">${ex.sets} × ${ex.reps}</div>
+                        <div class="text-lg font-black text-[#D00000] print-text-red leading-none whitespace-nowrap text-center">${ex.sets}<br><span class="text-xs text-black print-text-black">× ${ex.reps}</span></div>
                     </div>
                     
                     <!-- Action Tracking Boxes -->
@@ -269,20 +285,37 @@
                 `;
             }).join('');
 
+            let engineHTML = '';
+            if (session.engine) {
+                engineHTML = `
+                <div class="bg-red-50 print-bg-white border-b-[3px] border-black print-border-black flex items-stretch">
+                    <div class="w-14 flex-shrink-0 bg-[#D00000] print-bg-black border-r-[3px] border-black print-border-black flex flex-col items-center justify-center text-white print-text-white py-2">
+                        <span class="text-xl leading-none mb-1">⚡</span>
+                    </div>
+                    <div class="flex-1 p-3 flex flex-col justify-center">
+                        <div class="font-black text-[#D00000] print-text-black text-[14px] leading-tight mb-1 uppercase tracking-widest">${session.engine.title}</div>
+                        <div class="text-[13px] font-black text-black print-text-black uppercase mb-0.5">${session.engine.protocol}</div>
+                        <div class="text-[10px] text-gray-700 print-text-black font-bold leading-snug">${session.engine.focus}</div>
+                    </div>
+                </div>
+                `;
+            }
+
             return `
-            <div class="overflow-hidden rounded-xl border-[3px] border-black print-border-black shadow-sm mt-3">
+            <div class="overflow-hidden rounded-xl border-[3px] border-black print-border-heavy shadow-sm mt-3">
                 <div class="bg-black text-white print-bg-black print-text-white p-2 flex justify-between items-center px-4 border-b-[3px] border-black print-border-black">
                     <span class="text-[10px] font-bold tracking-widest uppercase">Exercise Block</span>
                     <span class="text-[10px] font-bold tracking-widest uppercase">Execution & Tracking</span>
                 </div>
                 <div class="flex flex-col">
                     ${rows}
+                    ${engineHTML}
                 </div>
             </div>
             `;
         }
 
-        function getFooterHTML() {
+        //        function getFooterHTML() {
             return `
             <div class="mt-4 flex gap-4 h-24 shrink-0">
                 <div class="flex-1 border-2 border-black print-border-black rounded-lg bg-gray-50 print-bg-gray-50 p-2 relative shadow-sm">
@@ -329,7 +362,7 @@
             const introHTML = `
                 <div class="no-print bg-gray-900 text-white p-6 text-center mb-8 border-b-4 border-[#D00000]">
                     <h2 class="text-2xl font-brand uppercase tracking-widest mb-1">Newman Academy U18 Girls S&C Database</h2>
-                    <p class="text-sm text-gray-400 mb-4">Winter Upgrades (Awaiting CSV Data) | High-Speed Layout | Press CMD+P to print.</p>
+                    <p class="text-sm text-gray-400 mb-4">Winter Upgrades (Engine Block Added) | High-Speed Layout | Press CMD+P to print.</p>
                     <button onclick="window.print()" class="bg-[#D00000] hover:bg-red-700 text-white font-bold py-2 px-6 rounded transition tracking-widest uppercase text-sm">
                         Print U18 Protocol Book
                     </button>
@@ -338,7 +371,7 @@
 
             const pagesHTML = U18_DATA.map(block => {
                 return block.sessions.map(session => `
-                    <div class="print-container page-break relative w-full max-w-[1100px] mx-auto bg-white p-4 md:p-8 mb-8 shadow-xl border-t-[10px] border-black print-border-black box-border flex flex-col justify-between print-bg-white" style="height: auto; min-height: 19cm">
+                    <div class="print-container page-break relative w-full max-w-[1100px] mx-auto bg-white p-4 md:p-8 mb-8 shadow-xl border-t-[10px] border-black print-border-heavy box-border flex flex-col justify-between print-bg-white" style="height: auto; min-height: 19cm">
                         <div>
                             ${getHeaderHTML()}
                             ${getTrackerHTML(block)}
@@ -349,7 +382,7 @@
                             </div>
                             <p class="text-gray-700 print-text-black font-bold text-[11px] mb-3 italic">${session.subtitle}</p>
 
-                            ${getTableHTML(session.exercises)}
+                            ${getTableHTML(session)}
                         </div>
                         ${getFooterHTML()}
                     </div>
